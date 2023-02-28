@@ -1,38 +1,231 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Poppins:ital,wght@1,300&family=Satisfy&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+  height: 100vh;
+  width: 99%;
+  padding: 5px;
   display: flex;
+  position: relative;
+  
+  
+}
+.app{
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: absolute;
+  width: 100%;
+  height: auto;
+
+}
+.main-page{
+  position: relative;
+  background-color: rgba(1, 1, 238, 0.68);
+  width: 100%;
+  height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(https://img.freepik.com/free-photo/botanical-leaves_23-2148121754.jpg?size=626&ext=jpg&ga=GA1.2.1640296882.1677562953&semt=ais);
+  background-size: cover;
+  border-radius: 10px;
+}
+.header{
+  position: sticky;
+  top:0;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(186, 226, 8);
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  z-index: 2;
+}
+.header h3{
+  font-size: large;
+  font-weight: 700;
+  letter-spacing: 0.12rem;
+  color: rgb(106, 18, 0);
+  cursor: pointer;
+  word-spacing: .7rem;
+}
+.main-page ul{
+  display: flex;
+  
+}
+.main-page ul li{
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  
+  margin: 0 20px;
+  
+}
+.main-page ul li a{
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: black;
+}
+.main-page ul li a::after{
+  content: '';
+  height: 4px;
+  width:0%;
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  background-color: brown;
+  transition: 0.7s;
+}
+.main-page ul li a:hover::after{
+    width: 100%;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: azure;
+  top: 40%;
+  left: 10%;
+  z-index: 0;
+}
+.content h3{
+  padding: 10px 0;
+  word-spacing: .7rem; 
+  font-family: 'Satisfy', cursive;
+  letter-spacing: .2rem;
+}
+.content h1{
+  padding-bottom: 10px;
+  letter-spacing: .3rem;
+  margin: 3px 0;
+  font-family: 'Gowun Batang', serif;
+}
+.content p{
+  width: 65%;
+  line-height: 1.4em;
+  font-size: 1.2rem;
+  
+}
+.content .btn{
+  width: 120px;
+  margin: 16px 0;
+  padding: 6px;
+  background-color: rgb(42, 42, 239);
+  border: none;
   color: white;
+  font-size: 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+
+}
+.icon-bar{
+  display: none;
+}
+.icon-bar i{
+  color: aliceblue;
+  padding: 10px;
+  position: absolute;
+  top: 0px;
+  font-size: 25px;
+  color: rgb(13, 7, 46);
+  right: 20px;
+}
+#section-part{
+  margin: 15px 0px;
+  width: 100%;
+  height: auto;
+  position: relative;
+ background-color: gray;
+ padding-left:20px ;
+ border-radius: 10px;
+  
+}
+#section-part .design{
+ padding: 20px 0px;
+
+
 }
 
-.App-link {
-  color: #61dafb;
+#section-part .design h2{
+  margin-bottom: 15px;
+font-family: 'Satisfy', cursive;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.design h4{
+  padding-bottom: 5px 0;
+}
+.design p{
+  padding: 10px 0;
+}
+.design button{
+  margin-top: 10px;
+  background-color: rgb(7, 118, 48);
+  padding: 5px;
+  font-size: 1.05rem;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  letter-spacing: 0.05rem;
+  cursor: pointer;
   }
-  to {
-    transform: rotate(360deg);
+  .design button:hover{
+    color: rgb(246, 176, 27);
+  }
+@media screen and (max-width:768px) {
+  .header h3{
+    word-spacing: .3rem;
+    letter-spacing: .1rem;
+  }
+  .content{
+    top: 25% ;
+  }
+  #navbar{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    align-items: flex-start;
+    justify-content: flex-start;
+    top: 47px;
+    right: -550px;
+    width: 350px;
+    padding: 20px 0;
+    height: 40vh;
+    background: rgb(27, 9, 6);
+    z-index: 2;
+  }
+  #navbar.active{
+    right: 3px;
+  }
+  
+  #navbar  li{
+    padding: 5px;
+    
+  }
+  .icon-bar{
+    display: block;
+  }
+  .icon-bar i{
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .main-page ul li a{
+    color: white;
+    letter-spacing: .15rem;
+    font-weight: 500;
+  }
+}
+@media screen and (max-width: 400px) {
+  .content{
+    top: 15% ;
+  }
+  #navbar{
+    width: 97%;
+    background: rgb(27, 9, 6);
+    z-index: 2;
   }
 }
