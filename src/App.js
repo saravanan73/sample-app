@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 function App() {
-  const [isActive, setIsActive] = useState(false)
+  const [isActive, setIsActive] = useState(true)
   const handleClick=(e)=>{
     setIsActive(isActive=>!isActive)
   }
